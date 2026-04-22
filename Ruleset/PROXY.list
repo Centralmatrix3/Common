@@ -1,5 +1,5 @@
 # 规则名称: PROXY
-# 规则统计: 26000
+# 规则统计: 26001
 
 DOMAIN,1password.drift.click
 DOMAIN,3dns-1.adobe.com
@@ -12491,6 +12491,7 @@ DOMAIN-SUFFIX,impermium.com
 DOMAIN-SUFFIX,improd.works
 DOMAIN-SUFFIX,imstagram.com
 DOMAIN-SUFFIX,imtagram.com
+DOMAIN-SUFFIX,imtintl.com
 DOMAIN-SUFFIX,imzog.com
 DOMAIN-SUFFIX,inaporn.com
 DOMAIN-SUFFIX,inasian.club
