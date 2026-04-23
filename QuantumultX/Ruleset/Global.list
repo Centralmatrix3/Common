@@ -1,5 +1,5 @@
 # 规则名称: Global
-# 规则统计: 7300
+# 规则统计: 7309
 
 HOST,cloud.oracle.com,Global
 HOST,steambroadcast.akamaized.net,Global
@@ -410,6 +410,7 @@ HOST-SUFFIX,aplusvpn.com,Global
 HOST-SUFFIX,app-measurement.net,Global
 HOST-SUFFIX,app.box.com,Global
 HOST-SUFFIX,app.cloudcone.com,Global
+HOST-SUFFIX,app.element.io,Global
 HOST-SUFFIX,app.heywire.com,Global
 HOST-SUFFIX,app.smartmailcloud.com,Global
 HOST-SUFFIX,app.tutanota.com,Global
@@ -466,6 +467,7 @@ HOST-SUFFIX,asiansexdiary.com,Global
 HOST-SUFFIX,asianspiss.com,Global
 HOST-SUFFIX,asianwomensfilm.de,Global
 HOST-SUFFIX,asiaone.com,Global
+HOST-SUFFIX,asiasociety.org,Global
 HOST-SUFFIX,asiatgp.com,Global
 HOST-SUFFIX,asiatoday.us,Global
 HOST-SUFFIX,ask.com,Global
@@ -618,6 +620,7 @@ HOST-SUFFIX,beijingspring.com,Global
 HOST-SUFFIX,beijingzx.org,Global
 HOST-SUFFIX,belamionline.com,Global
 HOST-SUFFIX,bell.wiki,Global
+HOST-SUFFIX,bellingcat.com,Global
 HOST-SUFFIX,bemywife.cc,Global
 HOST-SUFFIX,beric.me,Global
 HOST-SUFFIX,berlinerbericht.de,Global
@@ -3344,6 +3347,7 @@ HOST-SUFFIX,ismalltits.com,Global
 HOST-SUFFIX,ismprofessional.net,Global
 HOST-SUFFIX,isohunt.com,Global
 HOST-SUFFIX,israbox.com,Global
+HOST-SUFFIX,issues.chromium.org,Global
 HOST-SUFFIX,issuu.com,Global
 HOST-SUFFIX,istars.co.nz,Global
 HOST-SUFFIX,istarshine.com,Global
@@ -3624,6 +3628,7 @@ HOST-SUFFIX,lamayeshe.com,Global
 HOST-SUFFIX,lamnia.co.uk,Global
 HOST-SUFFIX,lamrim.com,Global
 HOST-SUFFIX,landofhope.tv,Global
+HOST-SUFFIX,lantern.io,Global
 HOST-SUFFIX,lanterncn.cn,Global
 HOST-SUFFIX,lantosfoundation.org,Global
 HOST-SUFFIX,laod.cn,Global
@@ -5024,6 +5029,7 @@ HOST-SUFFIX,rationalwiki.org,Global
 HOST-SUFFIX,raw.githack.com,Global
 HOST-SUFFIX,rawgit.com,Global
 HOST-SUFFIX,rawgithub.com,Global
+HOST-SUFFIX,rawstory.com,Global
 HOST-SUFFIX,razyboard.com,Global
 HOST-SUFFIX,rcam.target.com,Global
 HOST-SUFFIX,rcinet.ca,Global
@@ -5043,6 +5049,7 @@ HOST-SUFFIX,realsexpass.com,Global
 HOST-SUFFIX,reason.com,Global
 HOST-SUFFIX,rebatesrule.net,Global
 HOST-SUFFIX,recaptcha.net,Global
+HOST-SUFFIX,recordedfuture.com,Global
 HOST-SUFFIX,recordhistory.org,Global
 HOST-SUFFIX,recovery.org.tw,Global
 HOST-SUFFIX,recoveryversion.com.tw,Global
@@ -5108,6 +5115,7 @@ HOST-SUFFIX,rmbl.ws,Global
 HOST-SUFFIX,rmjdw.com,Global
 HOST-SUFFIX,rmjdw132.info,Global
 HOST-SUFFIX,roadshow.hk,Global
+HOST-SUFFIX,roblox.com,Global
 HOST-SUFFIX,roboforex.com,Global
 HOST-SUFFIX,robustnessiskey.com,Global
 HOST-SUFFIX,rocket-inc.net,Global
@@ -5883,6 +5891,7 @@ HOST-SUFFIX,thevivekspot.com,Global
 HOST-SUFFIX,thewgo.org,Global
 HOST-SUFFIX,thewirechina.com,Global
 HOST-SUFFIX,theync.com,Global
+HOST-SUFFIX,thinkchina.sg,Global
 HOST-SUFFIX,thinkgeek.com,Global
 HOST-SUFFIX,thinkingtaiwan.com,Global
 HOST-SUFFIX,thinkwithgoogle.com,Global
