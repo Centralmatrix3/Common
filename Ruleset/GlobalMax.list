@@ -1,5 +1,5 @@
 # 规则名称: GlobalMax
-# 规则统计: 34025
+# 规则统计: 34027
 
 DOMAIN,1password.drift.click
 DOMAIN,adobeereg.com
@@ -14661,6 +14661,7 @@ DOMAIN-SUFFIX,hrntt.org
 DOMAIN-SUFFIX,hrsaz.com
 DOMAIN-SUFFIX,hrsfc.ac.uk
 DOMAIN-SUFFIX,hrtek.ru
+DOMAIN-SUFFIX,hrtsea.com
 DOMAIN-SUFFIX,hrw.org
 DOMAIN-SUFFIX,hrweb.org
 DOMAIN-SUFFIX,hsad.ac.uk
@@ -32684,6 +32685,7 @@ DOMAIN-SUFFIX,xtracloud.net
 DOMAIN-SUFFIX,xtube.com
 DOMAIN-SUFFIX,xtubebdsm.com
 DOMAIN-SUFFIX,xtubezoo.com
+DOMAIN-SUFFIX,xu97.vip
 DOMAIN-SUFFIX,xuchao.net
 DOMAIN-SUFFIX,xuchao.org
 DOMAIN-SUFFIX,xuehua.us
