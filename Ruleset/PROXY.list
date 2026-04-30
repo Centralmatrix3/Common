@@ -1,5 +1,5 @@
 # 规则名称: PROXY
-# 规则统计: 26014
+# 规则统计: 26015
 
 DOMAIN,1password.drift.click
 DOMAIN,3dns-1.adobe.com
@@ -503,6 +503,7 @@ DOMAIN,time4.facebook.com
 DOMAIN,time4.google.com
 DOMAIN,time5.facebook.com
 DOMAIN,tmdb-image-prod.b-cdn.net
+DOMAIN,tmdb-web-image-prod.b-cdn.net
 DOMAIN,tv.applemusic.com
 DOMAIN,tvcastlive-hamivideo.cdn.hinet.net
 DOMAIN,ubisoft-orbit-savegames.s3.amazonaws.com
