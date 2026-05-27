@@ -14,10 +14,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v6.0.2
 
-      - name: Process Rulelib
+      - name: Process Sources
         run: python Scripts/Build.py S --copy
 
-      - name: Process Ruleset
+      - name: Convert Ruleset
         run: |
           for dir in Ruleset; do
             [ ! -d "$dir" ] && echo "$dir not found." && continue
