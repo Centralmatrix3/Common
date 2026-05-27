@@ -14,26 +14,26 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v6.0.2
 
-      - name: Generate Ruleset
-        run: python Scripts/Build.py --copy
+      - name: Process Rulelib
+        run: python Scripts/Build.py S --copy
 
-      - name: Convert Ruleset
+      - name: Process Ruleset
         run: |
           for dir in Ruleset; do
             [ ! -d "$dir" ] && echo "$dir not found." && continue
-            python Scripts/Build.py Surge "$dir" --type --order
+            python Scripts/Build.py C Surge "$dir" --type --order
           done
           for dir in QuantumultX/Ruleset; do
             [ ! -d "$dir" ] && echo "$dir not found." && continue
-            python Scripts/Build.py QuantumultX "$dir" --order
+            python Scripts/Build.py C QuantumultX "$dir" --order
           done
           for dir in Stash/Ruleset; do
             [ ! -d "$dir" ] && echo "$dir not found." && continue
-            python Scripts/Build.py Stash "$dir" --order
+            python Scripts/Build.py C Stash "$dir" --order
           done
           for dir in Surge/Ruleset; do
             [ ! -d "$dir" ] && echo "$dir not found." && continue
-            python Scripts/Build.py Surge "$dir" --order
+            python Scripts/Build.py C Surge "$dir" --order
           done
           find . -type d -name "__pycache__" -exec rm -rf {} +
 
