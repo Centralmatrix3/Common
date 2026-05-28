@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v6.0.2
 
       - name: Generate Ruleset
-        run: python Scripts/Build.py S --copy
+        run: python Scripts/Build.py R --copy
 
       - name: Convert Ruleset
         run: |
