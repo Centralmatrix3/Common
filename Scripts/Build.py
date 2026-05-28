@@ -227,7 +227,7 @@ def process_file(file_list, args):
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Rule Build")
     subparsers = parser.add_subparsers(dest="mode", required=True)
-    content = subparsers.add_parser("S") # S = Sources
+    content = subparsers.add_parser("R") # R = Ruleset
     content.add_argument("repo", nargs="?", help="Repository Name")
     sources = content.add_mutually_exclusive_group(required=True)
     sources.add_argument("--download", action="store_true")
@@ -295,7 +295,7 @@ def convert_mode(args):
 
 def main():
     args = parse_arguments()
-    if args.mode == "S":
+    if args.mode == "R":
         rulelib_mode(args)
     elif args.mode == "C":
         convert_mode(args)
