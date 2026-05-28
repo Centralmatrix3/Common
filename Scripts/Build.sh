@@ -28,6 +28,7 @@ copy() {
     done
 }
 
+
 if [[ "$repository" == "Network" ]]; then
     echo "Execute in $repository Repository"
     rule_dir=("Ruleset" "QuantumultX/Ruleset" "Stash/Ruleset" "Surge/Ruleset")
@@ -143,6 +144,7 @@ if [[ "$repository" == "Network" ]]; then
         done
     done
     echo "$repository Repository: All Ruleset Processed!"
+
 
 elif [[ "$repository" == "Matrix-io" ]]; then
     echo "Execute in $repository Repository"
@@ -293,6 +295,7 @@ elif [[ "$repository" == "Matrix-io" ]]; then
         done
     done
     echo "$repository Repository: All Ruleset Processed!"
+
 
 else
     echo "Execute Repository: $repository"

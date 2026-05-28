@@ -10,7 +10,9 @@ import dataclasses
 from pathlib import Path
 from collections import defaultdict
 
+
 COMMENT_PATTERN = re.compile(r"(?<!:)//.*$")
+
 
 RULE_TYPE_ORDER = [
     "DOMAIN",
@@ -26,6 +28,7 @@ RULE_TYPE_EXTRA = {"USER-AGENT", "URL-REGEX", "PROTOCOL", "PROCESS-NAME"}
 RULE_TYPE_INDEX = {rule: index for index, rule in enumerate(RULE_TYPE_ORDER)}
 RULE_TYPE_KNOWN = frozenset(RULE_TYPE_ORDER) | RULE_TYPE_EXTRA
 
+
 EGERN_RULE_MAP = {
     "DOMAIN": "domain_set",
     "DOMAIN-SUFFIX": "domain_suffix_set",
@@ -38,6 +41,7 @@ EGERN_RULE_MAP = {
 }
 EGERN_RULE_QUOTE = {"domain_wildcard_set"}
 
+
 QUANTUMULTX_RULE_MAP = {
     "DOMAIN": "HOST",
     "DOMAIN-SUFFIX": "HOST-SUFFIX",
@@ -49,6 +53,7 @@ QUANTUMULTX_RULE_MAP = {
     "GEOIP": "GEOIP"
 }
 
+
 SINGBOX_RULE_MAP = {
     "DOMAIN": "domain",
     "DOMAIN-SUFFIX": "domain_suffix",
@@ -57,8 +62,10 @@ SINGBOX_RULE_MAP = {
     "IP-CIDR6": "ip_cidr"
 }
 
+
 STASH_DOMAIN_FILE = {"AdBlock", "Advertising", "DIRECT", "GreatFireWall", "PROXY", "REJECT"}
 STASH_IPCIDR_FILE = {"CNCIDR", "CNCIDR4", "CNCIDR6"}
+
 
 @dataclasses.dataclass
 class Rule:
@@ -66,6 +73,7 @@ class Rule:
 @dataclasses.dataclass
 class RuleSet:
     name: str; rules: list = dataclasses.field(default_factory=list)
+
 
 def process_parse(line, enable_type=False, enable_param=False):
     line = COMMENT_PATTERN.sub("", line).strip()
@@ -89,6 +97,7 @@ def process_parse(line, enable_type=False, enable_param=False):
         rule_param = ",".join(param)
     return Rule(rule_type, rule_value, rule_param)
 
+
 def process_order(rules, unknown_rule=False):
     seen, result = set(), []
     def rule_sort(rule):
@@ -103,6 +112,7 @@ def process_order(rules, unknown_rule=False):
         result.append(rule)
     return result
 
+
 def process_read(file_path, enable_type=False, enable_order=False, enable_param=False, unknown_rule=False):
     rules = []
     for line in file_path.read_text(encoding="utf-8").splitlines():
@@ -112,6 +122,7 @@ def process_read(file_path, enable_type=False, enable_order=False, enable_param=
     if enable_order:
         rules = process_order(rules, unknown_rule=unknown_rule)
     return RuleSet(file_path.stem, rules)
+
 
 def process_write(file_path, rule_name, rule_data, platform):
     def rule_total():
@@ -128,6 +139,7 @@ def process_write(file_path, rule_name, rule_data, platform):
             file.write(f"# 规则统计: {rule_total()}\n\n")
             file.writelines(f"{line}\n" for line in rule_data)
     print(f"Processed ({platform}): {file_path}")
+
 
 def convert_rules(ruleset, platform):
     rule_list, rule_name = ruleset.rules, ruleset.name
@@ -180,6 +192,7 @@ def convert_rules(ruleset, platform):
         return output
     sys.exit(f"Unknown Platform: {platform}")
 
+
 def capture_file(file_path, platform):
     if not file_path.exists():
         sys.exit(f"{file_path} Not Found.")
@@ -197,6 +210,7 @@ def capture_file(file_path, platform):
         sys.exit(f"No File Found in: {file_path}")
     return file_list
 
+
 def process_file(file_list, args):
     for file_path in file_list:
         try:
@@ -208,6 +222,7 @@ def process_file(file_list, args):
         except Exception as error:
             print(f"Failed to process {file_path}: {error}")
     print("Processed Completed.")
+
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Rule Build")
@@ -237,6 +252,7 @@ def parse_arguments():
     parser.add_argument("--unknown-rule", action=argparse.BooleanOptionalAction)
     return parser.parse_args()
 
+
 def main():
     args = parse_arguments()
     print("============== Build.py ==============")
@@ -249,6 +265,7 @@ def main():
     print(f"Platform: {args.platform}")
     print(f"Processed {len(file)} file(s) in: {args.file_path}")
     process_file(file, args)
+
 
 if __name__ == "__main__":
     main()
@@ -262,6 +279,7 @@ def rulelib_mode(args):
     mode = "download" if args.download else "copy"
     rulelib.process_repo(mode, args.repo)
 
+
 def convert_mode(args):
     print("============== Build.py ==============")
     print(f"添加规则类型: {'已启用' if args.type else '未启用'}")
@@ -274,12 +292,14 @@ def convert_mode(args):
     print(f"Processed {len(file)} file(s) in: {args.file_path}")
     process_file(file, args)
 
+
 def main():
     args = parse_arguments()
     if args.mode == "S":
         rulelib_mode(args)
     elif args.mode == "C":
         convert_mode(args)
+
 
 if __name__ == "__main__":
     main()

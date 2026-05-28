@@ -5,7 +5,9 @@ import sys
 import argparse
 import urllib.request
 
+
 RULESET_BASE_URL = "https://raw.githubusercontent.com/Centralmatrix3/Network/master/Ruleset"
+
 
 def process_rule(target_file, source_file):
     source_rule_content = []
@@ -24,8 +26,10 @@ def process_rule(target_file, source_file):
     with open(target_file, "w", encoding="utf-8") as output:
         output.write("\n".join(source_rule_content) + "\n")
 
+
 def resolve_path(source_path, source_rule):
     return [f"{source_path}/{file}" for file in source_rule]
+
 
 def resolve_repo(repo_arg):
     if repo_arg := (repo_arg or "").strip():
@@ -33,6 +37,7 @@ def resolve_repo(repo_arg):
     if env_repo := os.environ.get("GITHUB_REPOSITORY", "").strip():
         return os.path.basename(env_repo)
     sys.exit("Error: No Repository Specified")
+
 
 def network_repo(source_path, repository):
     print(f"Execute in {repository} Repository")
@@ -132,7 +137,8 @@ def network_repo(source_path, repository):
             process_rule(target_file, source_file)
     print(f"{repository} Repository: All Ruleset Processed!")
 
-def matrix_repo(source_path, repository):
+
+def central_repo(source_path, repository):
     print(f"Execute in {repository} Repository")
     rule_dir = ["Clash", "Egern", "Loon", "QuantumultX", "Shadowrocket", "Sing-box", "Stash", "Surge"]
     for rule_path in rule_dir:
@@ -259,9 +265,10 @@ def matrix_repo(source_path, repository):
             process_rule(target_file, source_file)
     print(f"{repository} Repository: All Ruleset Processed!")
 
+
 def process_repo(mode, repo=None):
     repository = resolve_repo(repo)
-    repo_dispatch = {"Network": network_repo, "Matrix-io": matrix_repo}
+    repo_dispatch = {"Network": network_repo, "Matrix-io": central_repo}
     if mode not in {"download", "copy"}:
         sys.exit(f"Unknown Mode: {mode}")
     if repository not in repo_dispatch:
@@ -274,6 +281,7 @@ def process_repo(mode, repo=None):
         source_path = "Network/Ruleset"
     repo_dispatch[repository](source_path, repository)
 
+
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Rule Build")
     parser.add_argument("repo", nargs="?", help="Repository Name")
@@ -281,6 +289,7 @@ def parse_arguments():
     group.add_argument("--download", action="store_true")
     group.add_argument("--copy", action="store_true")
     return parser.parse_args()
+
 
 def main():
     args = parse_arguments()
@@ -290,6 +299,7 @@ def main():
     print("======================================")
     mode = "download" if args.download else "copy"
     process_repo(mode, args.repo)
+
 
 if __name__ == "__main__":
     main()
